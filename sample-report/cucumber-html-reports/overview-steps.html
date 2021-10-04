@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Manage Todo List Test Automation</td>
+              <td>1</td>
+            <td>05 Oct 2021, 00:17</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">framework_utilities.CucumberHooks.cleanupSetup()</td>
+              <td>12</td>
+              <td class="duration" data-value="755259566">0.755</td>
+              <td class="duration" data-value="755259566">0.795</td>
+              <td class="duration" data-value="9063114800">9.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">framework_utilities.CucumberHooks.initializeSetup(io.cucumber.java.Scenario)</td>
+              <td>12</td>
+              <td class="duration" data-value="10554800">0.010</td>
+              <td class="duration" data-value="10554800">0.111</td>
+              <td class="duration" data-value="126657600">0.126</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">framework_utilities.CucumberHooks.initializeWebDriverSetup()</td>
+              <td>12</td>
+              <td class="duration" data-value="1599026200">1.599</td>
+              <td class="duration" data-value="1599026200">4.526</td>
+              <td class="duration" data-value="19188314400">19.188</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.todoCountShouldShow(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="182031757">0.182</td>
+              <td class="duration" data-value="182031757">0.215</td>
+              <td class="duration" data-value="1274222300">1.274</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userAddsTheFollowingTodoItem(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="413626100">0.413</td>
+              <td class="duration" data-value="413626100">0.413</td>
+              <td class="duration" data-value="413626100">0.413</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userChangesAllItemsFromCompletedToActive()</td>
+              <td>1</td>
+              <td class="duration" data-value="253466100">0.253</td>
+              <td class="duration" data-value="253466100">0.253</td>
+              <td class="duration" data-value="253466100">0.253</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userChangesTheFollowingItemFromCompletedToActive(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="242294100">0.242</td>
+              <td class="duration" data-value="242294100">0.242</td>
+              <td class="duration" data-value="242294100">0.242</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userClearsAllCompletedItemsUsingClearCompletedButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="213358000">0.213</td>
+              <td class="duration" data-value="213358000">0.213</td>
+              <td class="duration" data-value="213358000">0.213</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userClearsTheFollowingItemUsingDestroyButton(io.cucumber.datatable.DataTable)</td>
+              <td>2</td>
+              <td class="duration" data-value="256380550">0.256</td>
+              <td class="duration" data-value="256380550">0.262</td>
+              <td class="duration" data-value="512761100">0.512</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userEditTheTextOfTheFollowingItem(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="626837500">0.626</td>
+              <td class="duration" data-value="626837500">0.626</td>
+              <td class="duration" data-value="626837500">0.626</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userHasItemsInTodoList(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="952417036">0.952</td>
+              <td class="duration" data-value="952417036">1.573</td>
+              <td class="duration" data-value="10476587400">10.476</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userIsOnEmptyTodoListPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="3454505500">3.454</td>
+              <td class="duration" data-value="3454505500">3.454</td>
+              <td class="duration" data-value="3454505500">3.454</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userMarksAllItemsAsCompletedUsingToggleAll()</td>
+              <td>1</td>
+              <td class="duration" data-value="332749700">0.332</td>
+              <td class="duration" data-value="332749700">0.332</td>
+              <td class="duration" data-value="332749700">0.332</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userMarksTheFollowingItemAsCompleted(io.cucumber.datatable.DataTable)</td>
+              <td>7</td>
+              <td class="duration" data-value="382045814">0.382</td>
+              <td class="duration" data-value="382045814">0.480</td>
+              <td class="duration" data-value="2674320700">2.674</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userSelectsFilter(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="237760450">0.237</td>
+              <td class="duration" data-value="237760450">0.246</td>
+              <td class="duration" data-value="475520900">0.475</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userShouldSeeAddedItemInTodoList(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="226579300">0.226</td>
+              <td class="duration" data-value="226579300">0.226</td>
+              <td class="duration" data-value="226579300">0.226</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userShouldSeeEditedItemInTodoList(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="174176300">0.174</td>
+              <td class="duration" data-value="174176300">0.174</td>
+              <td class="duration" data-value="174176300">0.174</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userShouldSeeOnlyCompletedItemsInTheList(int)</td>
+              <td>6</td>
+              <td class="duration" data-value="185044850">0.185</td>
+              <td class="duration" data-value="185044850">0.214</td>
+              <td class="duration" data-value="1110269100">1.110</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.TodoListTest_Steps.userShouldSeeStrikeoutOnCompletedItemText(io.cucumber.datatable.DataTable)</td>
+              <td>2</td>
+              <td class="duration" data-value="288579850">0.288</td>
+              <td class="duration" data-value="288579850">0.304</td>
+              <td class="duration" data-value="577159700">0.577</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>19</td>
+            <td>82</td>
+            <td class="duration">0.627</td>
+            <td class="duration">19.188</td>
+            <td class="duration">51.416</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
