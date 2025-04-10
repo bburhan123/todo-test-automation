@@ -2,7 +2,7 @@
 Feature: Manage ToDo List
   As a user, I should be able to manage my todos effectively.
 
-  @test-1 @t
+  @test-1
   Scenario: Add new items to the todo list
     Given I am on an empty todo list page
     When I add the following todo items
@@ -11,7 +11,7 @@ Feature: Manage ToDo List
     Then the todo list should display the added items in the same order
     And the todo count should display "2 items left!"
 
-  @test-2 @t
+  @test-2
   Scenario: Mark a todo item as completed
     Given I have the following items in the todo list
       | Write gherkin scenarios |
