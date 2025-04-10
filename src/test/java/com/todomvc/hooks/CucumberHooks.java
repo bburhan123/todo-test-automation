@@ -46,9 +46,10 @@ public class CucumberHooks {
         }
     }
 
-    @AfterStep(order = 0)
-    public void attachScreenshotAfterStep(Scenario scenario) {
+    //todo- Somehow , its not attaching the screenshot in default html report
+    /*@AfterStep(order = 0)
+    public void attachScreenshotAfterStep() {
         byte[] screenshot = ((TakesScreenshot) driver.get()).getScreenshotAs(OutputType.BYTES);
-        CucumberHooks.scenario.attach(screenshot, "image/png", "Screenshot");
-    }
+        scenario.attach(screenshot, "image/png", "Screenshot");
+    }*/
 }
