@@ -48,7 +48,7 @@ Note : The detailed ACs (Test Scenarios) are present in the [feature file](src/t
 
 * To run the specific test:
    ```
-   mvn clean test -D cucumber.options.tag="@test-1"
+   mvn test -D cucumber.filter.tags="@test-1"
    ```
 
 ## Test Report
