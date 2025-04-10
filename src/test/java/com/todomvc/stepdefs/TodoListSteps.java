@@ -18,7 +18,6 @@ import java.util.List;
 public class TodoListSteps {
     WebDriver driver;
     Scenario scenario;
-    //JsonObject testDataJsonObj;
     List<String> addedTodos = new ArrayList<>();
 
     private TodoListPage todoListPage;
@@ -29,7 +28,6 @@ public class TodoListSteps {
     public TodoListSteps() {
         driver = CucumberHooks.driver.get();
         scenario = CucumberHooks.scenario;
-        //testDataJsonObj = CucumberHooks.testDataJsonObj;
 
         todoListPage = new TodoListPage(driver);
         uiUtils = new UiUtils();
@@ -45,6 +43,7 @@ public class TodoListSteps {
     public void iAmOnAnEmptyTodoListPage() {
         navigateTodoListPage();
         todoListPage.verifyTodoItemsCount(0);
+        uiUtils.attachScreenShot();
     }
 
     @When("I add the following todo items")
@@ -60,6 +59,7 @@ public class TodoListSteps {
     public void theTodoListShouldDisplayTheAddedItems() {
         List<String> actualTodos = todoListPage.getTodoItems();
         Assert.assertEquals(actualTodos, addedTodos);
+        uiUtils.attachScreenShot();
     }
 
     @And("the todo count should display {string}")
@@ -75,43 +75,51 @@ public class TodoListSteps {
             addedTodos.add(item);
             todoListPage.addNewTodo(item);
         }
+        uiUtils.attachScreenShot();
     }
 
     @Given("I have the following completed items in the todo list")
     public void iHaveTheFollowingCompletedItemsInTheTodoList(List<String> todoItems) {
         iHaveTheFollowingItemsInTheTodoList(todoItems);
         todoListPage.clickToggleAllBtn();
+        uiUtils.attachScreenShot();
     }
 
     @When("I mark the item {string} as completed")
     public void iMarkTheItemAsCompleted(String todoItem) {
         todoListPage.clickTodoItemToggleByText(todoItem);
+        uiUtils.attachScreenShot();
     }
 
     @Then("the todo list should display {string} as completed")
     public void theTodoListShouldDisplayAsCompleted(String completedItem) {
         Assert.assertTrue(todoListPage.isItemCompleted(completedItem));
+        uiUtils.attachScreenShot();
     }
 
     @When("I edit the item {string} to {string}")
     public void iEditTheItemTo(String existingText, String editText) {
         todoListPage.editTodoItemByText(existingText, editText);
+        uiUtils.attachScreenShot();
     }
 
     @Then("the todo list should display the edited item {string}")
     public void theTodoListShouldDisplayTheEditedItem(String todoItem) {
         Assert.assertTrue(todoListPage.isItemExists(todoItem));
+        uiUtils.attachScreenShot();
     }
 
     @When("I remove an active item {string}")
     @When("I remove a completed item {string}")
     public void iRemoveAItem(String itemText) {
         todoListPage.removeItemByDestroyBtn(itemText);
+        uiUtils.attachScreenShot();
     }
 
     @Then("the todo list should not display {string}")
     public void theTodoListShouldNotDisplay(String item) {
         Assert.assertFalse(todoListPage.isItemExists(item));
+        uiUtils.attachScreenShot();
     }
 
     @When("I select {string} filter")
@@ -130,16 +138,19 @@ public class TodoListSteps {
     @When("I clear all completed items using clear completed button")
     public void iClearAllCompletedItemsUsingClearCompletedButton() {
         todoListPage.clickClearCompletedBtn();
+        uiUtils.attachScreenShot();
     }
 
     @When("I change the item {string} from completed to active")
     public void iChangeTheItemFromCompletedToActive(String item) {
         todoListPage.clickTodoItemToggleByText(item);
+        uiUtils.attachScreenShot();
     }
 
     @When("I change all active items to completed using toggle-all button")
     @When("I change all Completed items to active using toggle-all button")
     public void iChangeAllItemsStatusUsingToggleAllButton() {
         todoListPage.clickToggleAllBtn();
+        uiUtils.attachScreenShot();
     }
 }
