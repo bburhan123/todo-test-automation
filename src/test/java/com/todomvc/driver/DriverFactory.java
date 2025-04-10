@@ -1,5 +1,6 @@
-package com.todomvc.utils;
+package com.todomvc.driver;
 
+import com.todomvc.config.ConfigManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;

@@ -1,5 +1,7 @@
 package com.todomvc.stepdefs;
 
+import com.todomvc.config.ConfigManager;
+import com.todomvc.hooks.CucumberHooks;
 import com.todomvc.utils.*;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;

@@ -1,4 +1,4 @@
-package com.todomvc.utils;
+package com.todomvc.config;
 
 import org.yaml.snakeyaml.Yaml;
 
