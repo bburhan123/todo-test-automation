@@ -1,0 +1,3 @@
+# Browser used to run the UI test scenarios. Possible values - chrome/firefox/edge/chrome-docker.
+browser: firefox
+appUrl: https://todomvc.com/examples/react/dist/
